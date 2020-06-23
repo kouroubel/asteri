@@ -1,8 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<div class="callout callout-default">
 <h5>Συμμετοχές για την έξοδο στην ψησταριά Αστέρι</h4>
-<h5>Ημερομηνία: Παρασκευή 26.06</h5>
-<h5>Ώρα: 19:00 (μετά την προπόνηση)</h5><br><br>
+</div>
+<div class="callout callout-callout-info">
+  Ημερομηνία: Παρασκευή 26.06
+</div>
+<div class="callout callout-callout-danger">
+  Ώρα: 19:00 (μετά την προπόνηση)
+</div>
 
 <button type="button" class="btn btn-primary">
   Αριθμός Ενηλίκων <span class="badge badge-light"><%= Participant.sum(:n_adults) %> </span>
@@ -24,7 +30,7 @@
   </thead>
 
   <tbody>
-    <% @participants.each do |participant| %>
+    <% @participants.order(name: :asc).each do |participant| %>
       <tr class ="center">
         <td><%= participant.name %></td>
         <td><%= participant.will_come ? "ΝΑΙ" : "ΟΧΙ" %></td>
