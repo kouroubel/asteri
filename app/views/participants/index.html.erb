@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h4>Συμμετοχές για την έξοδο στην ψησταριά Αστέρι</h4>
-<h4>Ημερομηνία: Παρασκευή 26.06</h4>
-<h4>Ώρα: 19:00 (μετά την προπόνηση)</h4><br><br>
+<h5>Συμμετοχές για την έξοδο στην ψησταριά Αστέρι</h4>
+<h5>Ημερομηνία: Παρασκευή 26.06</h5>
+<h5>Ώρα: 19:00 (μετά την προπόνηση)</h5><br><br>
 
 <button type="button" class="btn btn-primary">
   Αριθμός Ενηλίκων <span class="badge badge-light"><%= Participant.sum(:n_adults) %> </span>
@@ -12,7 +12,7 @@
   Αριθμός Παιδιών <span class="badge badge-light"><%= Participant.sum(:n_kids)  %> </span>
 </button><br><br>
 
-<table class="table table-condensed">
+<table class="table table-condensed table-striped">
   <thead>
     <tr class ="table-info center">
       <th>Όνομα</th>
@@ -30,7 +30,7 @@
         <td><%= participant.will_come ? "ΝΑΙ" : "ΟΧΙ" %></td>
         <td><%= participant.n_adults %></td>
         <td><%= participant.n_kids %></td>
-        <td><%= link_to 'Τροποποίηση', edit_participant_path(participant), class:"btn btn-xs btn-outline-primary"  %></td>
+        <td><%= link_to 'Τροποποίηση', edit_participant_path(participant), class:"btn btn-sm btn-outline-primary"  %></td>
       </tr>
     <% end %>
   </tbody>
