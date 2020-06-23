@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h4>Συμμετοχές για την έξοδο στην ψησταριά Αστέρι</h4>
+<h4>Ημερομηνία: Παρασκευή 26.06</h4>
+<h4>Ώρα: 19:00 (μετά την προπόνηση)</h4><br><br>
+
+<button type="button" class="btn btn-primary">
+  Αριθμός Ενηλίκων <span class="badge badge-light"><%= Participant.sum(:n_adults) %> </span>
+</button>
+
+<button type="button" class="btn btn-success">
+  Αριθμός Παιδιών <span class="badge badge-light"><%= Participant.sum(:n_kids)  %> </span>
+</button><br><br>
+
+<table class="table table-condensed">
+  <thead>
+    <tr class ="table-info center">
+      <th>Όνομα</th>
+      <th>Συμμετοχή</th>
+      <th>Αριθμός ενηλίκων</th>
+      <th>Αριθμός παιδιών</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @participants.each do |participant| %>
+      <tr class ="center">
+        <td><%= participant.name %></td>
+        <td><%= participant.will_come ? "ΝΑΙ" : "ΟΧΙ" %></td>
+        <td><%= participant.n_adults %></td>
+        <td><%= participant.n_kids %></td>
+        <td><%= link_to 'Τροποποίηση', edit_participant_path(participant), class:"btn btn-xs btn-outline-primary"  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Participant', new_participant_path %>
