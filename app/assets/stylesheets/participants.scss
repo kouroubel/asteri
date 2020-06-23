@@ -5,6 +5,11 @@
   text-align: center;
 }
 
+//removes underlines from links
+a, a:link, a:hover, a:visited{ 
+  text-decoration: none;
+} 
+
 .callout {
   padding: 20px;
   margin: 20px 0;
@@ -33,3 +38,4 @@
     }
   }
 }
+
