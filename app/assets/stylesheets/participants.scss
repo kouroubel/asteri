@@ -5,6 +5,13 @@
   text-align: center;
 }
 
+.btn-group-xs > .btn, .btn-xs {
+  padding: .7rem .3rem;
+  font-size: .700rem;
+  line-height: .5;
+  border-radius: .2rem;
+}
+
 //removes underlines from links
 a, a:link, a:hover, a:visited{ 
   text-decoration: none;
