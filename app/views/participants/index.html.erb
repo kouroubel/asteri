@@ -33,7 +33,8 @@
     <% @participants.order(name: :asc).each do |participant| %>
       <tr class ="center">
         <td><%= participant.name %></td>
-        <td><%= participant.will_come ? "ΝΑΙ" : "ΟΧΙ" %></td>
+        <!--<td><%#= participant.will_come ? "ΝΑΙ" : "ΟΧΙ" %></td>-->
+        <td><%= check_box("option","displayed", checked: participant.will_come, :style => "width: 20px; height: 20px;", :disabled=>true) %> </td> 
         <!--<td><%= participant.n_adults %></td>-->
         <!--<td><%= participant.n_kids %></td>-->
         <td><%= link_to 'Τροποποίηση', edit_participant_path(participant), class:"btn btn-xs btn-outline-primary"  %></td>
